@@ -1,7 +1,12 @@
-# 🚀 AWS → GCP Server Migration Project (Apache Web Server)
+# 🚀 AWS → GCP Server Migration Project (Apache Web Server) 🚀
 
 This project demonstrates the migration of a running server workload from Amazon Web Services (AWS) to Google Cloud Platform (GCP) using Google’s VM Migration service. The source server hosted a web application using Apache2, and the migration ensured minimal downtime with full replication and a seamless cutover.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<img width="2256" height="1266" alt="migration2" src="https://github.com/user-attachments/assets/3dba8689-f1af-4bc5-8bcd-5926e9006573" />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 🏗️ Project Objectives
 
