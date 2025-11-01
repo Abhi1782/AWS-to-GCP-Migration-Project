@@ -45,3 +45,91 @@ This project demonstrates the migration of a running server workload from Amazon
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# 2️⃣ Configure AWS IAM for Migration
+
+  1) Created an IAM user for migration purposes
+  2) Attached custom IAM policy with required permissions:
+
+     {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances",
+                "ec2:DescribeVolumes",
+                "ec2:DescribeInstanceTypes",
+                "ec2:DescribeSnapshots",
+                "ec2:CreateTags",
+                "ec2:CreateSnapshots",
+                "ec2:StopInstances"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ebs:ListSnapshotBlocks",
+                "ebs:ListChangedBlocks",
+                "ebs:GetSnapshotBlock",
+                "ec2:DeleteSnapshot",
+                "ec2:DeleteTags"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:ResourceTag/m2vm-resource": "snapshot"
+                }
+            }
+        }
+    ]
+}
+
+  3) Generated Access Key & Secret Key
+  4) Secured credentials using IAM security best practices
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<img width="1920" height="1080" alt="Screenshot (458)" src="https://github.com/user-attachments/assets/aa0ce60e-0085-4b65-9817-3b7f980933a7" />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<img width="1920" height="1080" alt="Screenshot (459)" src="https://github.com/user-attachments/assets/1c663c38-1187-464c-820e-531286cf4ffc" />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<img width="1920" height="1080" alt="Screenshot (460)" src="https://github.com/user-attachments/assets/2b2ccc69-bfb8-4b27-a347-2007f39ad8eb" />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<img width="1920" height="1080" alt="Screenshot (461)" src="https://github.com/user-attachments/assets/7a6e8fab-121d-454e-8739-835dba05d8fb" />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 3️⃣ Start Migration Setup in GCP
+
+  1) Enabled VM Migration API
+  2) Deployed VM Migration Manager
+  3) Installed migration agent on AWS VM
+  4) Authenticated migration with AWS IAM Access Keys
+     
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<img width="1920" height="1080" alt="Screenshot (457)" src="https://github.com/user-attachments/assets/c7e5854a-da32-48e4-9cee-8e50cb669925" />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<img width="1920" height="1080" alt="Screenshot (473)" src="https://github.com/user-attachments/assets/7ae72477-12b9-4b8d-b5d7-d5b8255d0bf9" />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 4️⃣ VM Replication & Cutover
+
+       1) Initiated replication process → disk data copied to GCP
+Monitored replication status until 100%
+Executed Cutover:
+
+      Stopped source VM → Created a final sync snapshot
+      Booted the migrated VM automatically on Google Compute Engine
+
+Validated same OS + same Apache configuration after migration
