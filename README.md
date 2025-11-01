@@ -2,6 +2,8 @@
 
 This project demonstrates the migration of a running server workload from Amazon Web Services (AWS) to Google Cloud Platform (GCP) using Google’s VM Migration service. The source server hosted a web application using Apache2, and the migration ensured minimal downtime with full replication and cutover.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # 🏗️ Project Objectives
 
   1) Deploy and configure a server in AWS (Source)
@@ -11,22 +13,10 @@ This project demonstrates the migration of a running server workload from Amazon
   5) Configure IAM & network firewall in GCP (Destination)
   6) Validate web server availability post-migration
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # 🔧 Technologies & Cloud Services Used
 
-# Component	                   AWS	                        GCP
+<img width="642" height="147" alt="image" src="https://github.com/user-attachments/assets/24e5992f-16f5-4dc9-8c65-37ff9ee60a3c" />
 
-1) Server/VM	EC2	Compute Engine
-Identity & Access	IAM	IAM
-Migration Tool	–	Migrate for Compute Engine
-Network Security	Security Groups	VPC Firewall Rules
-OS & Web Server	Ubuntu + Apache2	Ubuntu + Apache2
-
-
-
-Component	AWS	GCP
-Server/VM	EC2	Compute Engine
-Identity & Access	IAM	IAM
-Migration Tool	–	Migrate for Compute Engine
-Network Security	Security Groups	VPC Firewall Rules
-OS & Web Server	Ubuntu + Apache2	Ubuntu + Apache2
-<img width="642" height="145" alt="image" src="https://github.com/user-attachments/assets/45af9497-5a3e-466a-9921-8f6813fe4cc4" />
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
