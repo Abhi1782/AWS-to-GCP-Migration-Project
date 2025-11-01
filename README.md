@@ -10,3 +10,23 @@ This project demonstrates the migration of a running server workload from Amazon
   4) Migrate the server to GCP using VM Migration
   5) Configure IAM & network firewall in GCP (Destination)
   6) Validate web server availability post-migration
+
+# 🔧 Technologies & Cloud Services Used
+
+# Component	                   AWS	                        GCP
+
+1) Server/VM	EC2	Compute Engine
+Identity & Access	IAM	IAM
+Migration Tool	–	Migrate for Compute Engine
+Network Security	Security Groups	VPC Firewall Rules
+OS & Web Server	Ubuntu + Apache2	Ubuntu + Apache2
+
+
+
+Component	AWS	GCP
+Server/VM	EC2	Compute Engine
+Identity & Access	IAM	IAM
+Migration Tool	–	Migrate for Compute Engine
+Network Security	Security Groups	VPC Firewall Rules
+OS & Web Server	Ubuntu + Apache2	Ubuntu + Apache2
+<img width="642" height="145" alt="image" src="https://github.com/user-attachments/assets/45af9497-5a3e-466a-9921-8f6813fe4cc4" />
